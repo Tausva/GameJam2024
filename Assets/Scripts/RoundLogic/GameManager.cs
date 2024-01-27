@@ -15,13 +15,13 @@ public class GameManager : MonoBehaviour
     {
         isPlayerTurn = DecideWhoGoesFirst();
         isPlayerStartedFirst = isPlayerTurn;
-        roundNumber = 1;
+        roundNumber = 0;
 
         player = playerGameObject.GetComponent<IPlayer>();
-        //bot = botGameObject.GetComponent<IPlayer>();
+        bot = botGameObject.GetComponent<IPlayer>();
 
         player.Instantiate(this);
-        //bot.Instantiate(this);
+        bot.Instantiate(this);
 
         //Horrible hack
         isPlayerTurn = !isPlayerTurn;
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 
         if (isPlayerTurn)
         {
-            //bot.EnableTurn();
+            bot.EnableTurn();
             isPlayerTurn = false;
         }
         else
