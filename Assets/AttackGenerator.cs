@@ -41,7 +41,7 @@ namespace Assets
 
             if (isDamageShouldBeMade)
             {
-
+                healthBarBot.DamageHealthBar();
             }
         }
     }
