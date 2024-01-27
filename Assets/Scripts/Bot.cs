@@ -1,16 +1,19 @@
+using System.Collections;
 using UnityEngine;
 
 public class Bot : Participant
 {
+    [SerializeField] private Animator attackAnimator;
+
     bool isActionTime;
 
     private void Update()
     {
         if (isActionTime)
         {
-            ((BotDeck)myDeck).RandomAttack();
+            attackAnimator.SetTrigger("Attack");
 
-            PassMyTurn();
+            StartCoroutine(Attack());
             isActionTime = false;
         }
     }
@@ -18,5 +21,14 @@ public class Bot : Participant
     protected override void TurnLogic()
     {
         isActionTime = true;
+    }
+
+    private IEnumerator Attack()
+    {
+        yield return new WaitForSeconds(1.2f);
+
+        ((BotDeck)myDeck).RandomAttack();
+
+        PassMyTurn();
     }
 }
