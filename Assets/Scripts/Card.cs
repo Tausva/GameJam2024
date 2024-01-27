@@ -19,7 +19,7 @@ public class Card : MonoBehaviour
     private void Awake()
     {
         jokeText = GetComponentInChildren<TMP_Text>();
-        tagContainer = transform.GetChild(1);
+        tagContainer = transform.GetChild(0).GetChild(1);
     }
 
     public Card InstantiateCard(string windup, string punchline, List<Tag> tags)
