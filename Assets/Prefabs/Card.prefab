@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -45}
-  m_SizeDelta: {x: 0, y: -90}
+  m_AnchoredPosition: {x: -0.000011444092, y: -33.59218}
+  m_SizeDelta: {x: -7.5805, y: -76.9556}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6632452712715347912
 CanvasRenderer:
@@ -89,15 +89,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 5
-    m_Right: 5
-    m_Top: 5
-    m_Bottom: 5
-  m_ChildAlignment: 4
+    m_Left: 1
+    m_Right: 1
+    m_Top: 4
+    m_Bottom: 1
+  m_ChildAlignment: 1
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 25, y: 25}
-  m_Spacing: {x: 5, y: 5}
+  m_CellSize: {x: 16, y: 16}
+  m_Spacing: {x: 1, y: 1}
   m_Constraint: 1
   m_ConstraintCount: 3
 --- !u!1 &2045353213559226305
@@ -169,8 +169,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 8fe08338cb8ea0347b0688c72e5d855b, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -235,10 +235,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4bca317756a2bc40add2147c346f0c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagPrefab: {fileID: 2783049127862705660, guid: c88072267cb0e4d458c43af87de89e92, type: 3}
+  tagPrefab: {fileID: 2691860741295039277, guid: 5a58ff9983fa79645b846dbfd1ec7561, type: 3}
   jokeWindup: 
   jokePunchline: 
-  tags: []
+  tags: 
 --- !u!1 &4117887734375581032
 GameObject:
   m_ObjectHideFlags: 0
@@ -273,8 +273,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 45}
-  m_SizeDelta: {x: 100, y: 90}
+  m_AnchoredPosition: {x: 0, y: 24.067318}
+  m_SizeDelta: {x: 52.4195, y: 61.6997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7972058827110774714
 CanvasRenderer:
@@ -304,7 +304,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum
+  m_text: Kodel seskas yra sestas?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -331,8 +331,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
