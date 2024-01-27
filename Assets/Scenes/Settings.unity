@@ -255,10 +255,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Lietuvi\u0161ki"
+  m_text: "Lietuvi\u0161kai"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0112f8314110db1448c066b7a26d8e44, type: 2}
+  m_sharedMaterial: {fileID: 3037097490889164346, guid: 0112f8314110db1448c066b7a26d8e44, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1246,7 +1246,7 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: "Lietuvi\u0161ki"
+    - m_Text: "Lietuvi\u0161kai"
       m_Image: {fileID: 0}
     - m_Text: English
       m_Image: {fileID: 0}
@@ -1438,8 +1438,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Back
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 0112f8314110db1448c066b7a26d8e44, type: 2}
+  m_sharedMaterial: {fileID: 3037097490889164346, guid: 0112f8314110db1448c066b7a26d8e44, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
