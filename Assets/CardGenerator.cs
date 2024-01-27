@@ -1,8 +1,6 @@
-using Assembly_CSharp;
 using Assets;
 using Assets.Scripts.Enums;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -16,7 +14,17 @@ public class CardGenerator : MonoBehaviour
 
     private void Awake()
     {
-        GetDadeJokesInLithuania();
+        var languageSelected = PlayerPrefs.GetInt("Language", 1);
+
+        switch (languageSelected)
+        {
+            case 0:
+                Jokes = Repository.GetJokesByLanguage(LanguageJoke.Lithuania);
+                break;
+            case 1:
+                Jokes = Repository.GetJokesByLanguage(LanguageJoke.English);
+                break;
+        }
     }
 
     void Start()
@@ -32,16 +40,6 @@ public class CardGenerator : MonoBehaviour
         var randomJoke = GetRandomKeyValuePair();
 
         card.InstantiateCard(randomJoke.Key, randomJoke.Value, GetRandomTags());
-    }
-
-    public void GetDadeJokesInEnglish()
-    {
-        Jokes = Repository.GetJokesByLanguage(LanguageJoke.English);
-    }
-
-    public void GetDadeJokesInLithuania()
-    {
-        Jokes = Repository.GetJokesByLanguage(LanguageJoke.Lithuania);
     }
 
     private List<Tag> GetRandomTags()
