@@ -2,7 +2,7 @@
 
 public class Participant : MonoBehaviour, IPlayer
 {
-    private bool isMyTurn = false;
+    protected bool isMyTurn = false;
     private GameManager gameManager;
     [SerializeField] protected Deck myDeck;
 

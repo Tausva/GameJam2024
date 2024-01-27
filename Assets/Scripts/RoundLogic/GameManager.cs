@@ -1,4 +1,5 @@
 using Assembly_CSharp;
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -11,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject botGameObject;
     [SerializeField] private ShieldGenerator shieldGeneratorPlayer;
     [SerializeField] private ShieldGenerator shieldGeneratorBot;
+    [SerializeField] private Deck playerDeck;
 
     private IPlayer player;
     private IPlayer bot;
@@ -47,17 +49,32 @@ public class GameManager : MonoBehaviour
         {
             isPlayerTurn = true;
             shieldGeneratorPlayer.RotateShieldForGame();
+
+            StartCoroutine(SpawnCards());
+
             player.EnableTurn();
         }
-    }
-
-    void Update()
-    {
-        
     }
 
     private bool DecideWhoGoesFirst()
     {
         return true;
+    }
+
+    private IEnumerator SpawnCards()
+    {
+        float waitFor = 0.3f;
+        Debug.Log("Draw 1");
+        playerDeck.DrawCard();
+        yield return new WaitForSeconds(waitFor);
+        Debug.Log("Draw 2");
+        playerDeck.DrawCard();
+        yield return new WaitForSeconds(waitFor);
+        Debug.Log("Draw 3");
+        playerDeck.DrawCard();
+        yield return new WaitForSeconds(waitFor);
+        Debug.Log("Draw 4");
+        playerDeck.DrawCard();
+        
     }
 }

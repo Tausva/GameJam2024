@@ -2,21 +2,21 @@ using UnityEngine;
 
 public class Bot : Participant
 {
-    bool isMyTurn;
+    bool isActionTime;
 
     private void Update()
     {
-        if (isMyTurn)
+        if (isActionTime)
         {
             ((BotDeck)myDeck).RandomAttack();
 
             PassMyTurn();
-            isMyTurn = false;
+            isActionTime = false;
         }
     }
 
     protected override void TurnLogic()
     {
-        isMyTurn = true;
+        isActionTime = true;
     }
 }

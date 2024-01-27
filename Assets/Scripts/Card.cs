@@ -1,5 +1,4 @@
 using Assets;
-using Assets.Scripts;
 using Assets.Scripts.Enums;
 using System.Collections.Generic;
 using TMPro;
@@ -12,19 +11,17 @@ public class Card : MonoBehaviour
 
     [SerializeField] private GameObject tagPrefab;
 
-    [Space]
-    [Header("Debug")]
-    [SerializeField] private string jokeWindup;
-    [SerializeField] private string jokePunchline;
-    [SerializeField] private List<Tag> tags;
+    private string jokeWindup;
+    private string jokePunchline;
+    private List<Tag> tags;
     private AttackGenerator attackGenerator;
     private Deck deck;
 
-    [Space]
     //Lerping vars
     private Vector3 startPosition;
     private Vector3 targetPosition;
     private float timeElapsed;
+    [Space]
     [SerializeField] private float lerpDuration = 3;
 
     private void Awake()
@@ -96,6 +93,7 @@ public class Card : MonoBehaviour
 
     public void RemoveAllCards()
     {
+        DisableCards();
         transform.parent.parent.GetComponent<Hand>().RemoveAllCards();
     }
 
