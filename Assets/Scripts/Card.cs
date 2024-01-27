@@ -51,8 +51,8 @@ public class Card : MonoBehaviour
         foreach (var tag in tags)
         {
             var instantiatedTag = Instantiate(tagPrefab);
-            //Do tag logic: instantiatedTag.GetComponent<>
-            instantiatedTag.transform.parent = tagContainer;
+            instantiatedTag.GetComponent<TagLogic>().SetImage(tag);
+            instantiatedTag.transform.SetParent(tagContainer);
         }
     }
 }

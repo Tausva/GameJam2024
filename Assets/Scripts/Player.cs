@@ -1,3 +1,4 @@
+using Assets.Scripts.Enums;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Tilemaps;
@@ -42,15 +43,7 @@ public class Player : MonoBehaviour, IPlayer
 
     public void Test()
     {
-        
-        Card card = FindObjectOfType<Card>();
-        Debug.Log(card.name);
-        card.InstantiateCard("Kurwa bober", "Jak peradole", new List<string>
-        {
-            "vienas",
-            "du",
-            "trys",
-            "keturi",""
-        });
+       var card = FindObjectOfType<Card>();
+        card.InstantiateCard("Bober kurwa", "jak perdole", new List<Tag> { Tag.Fire, Tag.Water});
     }
 }
