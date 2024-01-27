@@ -44,6 +44,6 @@ public class Player : MonoBehaviour, IPlayer
     public void Test()
     {
        var card = FindObjectOfType<Card>();
-        card.InstantiateCard("Bober kurwa", "jak perdole", new List<Tag> { Tag.Fire, Tag.Water});
+        card.InstantiateCard("Bober kurwa", "jak perdole", new List<Tag> { Tag.Fire, Tag.Water, Tag.Dragon, Tag.Demon, Tag.Bug});
     }
 }

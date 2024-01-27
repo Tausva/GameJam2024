@@ -1080,49 +1080,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 228620252}
     m_Modifications:
-    - target: {fileID: 857618269404173247, guid: 8ec2c4af735709740ac91d75853eafaa, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.000011444092
-      objectReference: {fileID: 0}
+    - target: {fileID: 2006798021532223937, guid: 8ec2c4af735709740ac91d75853eafaa, type: 3}
+      propertyPath: tagPrefab
+      value: 
+      objectReference: {fileID: 2691860741295039277, guid: 5a58ff9983fa79645b846dbfd1ec7561, type: 3}
     - target: {fileID: 2045353213559226305, guid: 8ec2c4af735709740ac91d75853eafaa, type: 3}
       propertyPath: m_Name
       value: Card
       objectReference: {fileID: 0}
     - target: {fileID: 5386172689417862718, guid: 8ec2c4af735709740ac91d75853eafaa, type: 3}
-      propertyPath: m_Spacing.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386172689417862718, guid: 8ec2c4af735709740ac91d75853eafaa, type: 3}
-      propertyPath: m_Spacing.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386172689417862718, guid: 8ec2c4af735709740ac91d75853eafaa, type: 3}
-      propertyPath: m_CellSize.x
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386172689417862718, guid: 8ec2c4af735709740ac91d75853eafaa, type: 3}
-      propertyPath: m_CellSize.y
-      value: 16
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386172689417862718, guid: 8ec2c4af735709740ac91d75853eafaa, type: 3}
       propertyPath: m_Padding.m_Top
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386172689417862718, guid: 8ec2c4af735709740ac91d75853eafaa, type: 3}
-      propertyPath: m_ChildAlignment
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386172689417862718, guid: 8ec2c4af735709740ac91d75853eafaa, type: 3}
-      propertyPath: m_Padding.m_Left
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386172689417862718, guid: 8ec2c4af735709740ac91d75853eafaa, type: 3}
-      propertyPath: m_Padding.m_Right
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5386172689417862718, guid: 8ec2c4af735709740ac91d75853eafaa, type: 3}
-      propertyPath: m_Padding.m_Bottom
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5879725723044899148, guid: 8ec2c4af735709740ac91d75853eafaa, type: 3}
       propertyPath: m_Pivot.x
