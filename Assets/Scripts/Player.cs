@@ -39,4 +39,18 @@ public class Player : MonoBehaviour, IPlayer
     {
         
     }
+
+    public void Test()
+    {
+        
+        Card card = FindObjectOfType<Card>();
+        Debug.Log(card.name);
+        card.InstantiateCard("Kurwa bober", "Jak peradole", new List<string>
+        {
+            "vienas",
+            "du",
+            "trys",
+            "keturi",""
+        });
+    }
 }
