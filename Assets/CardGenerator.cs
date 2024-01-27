@@ -1,6 +1,8 @@
+using Assembly_CSharp;
 using Assets;
 using Assets.Scripts.Enums;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -12,7 +14,6 @@ public class CardGenerator : MonoBehaviour
 
     private Dictionary<string, string> Jokes = new Dictionary<string, string>();
 
-
     private void Awake()
     {
     }
@@ -23,6 +24,13 @@ public class CardGenerator : MonoBehaviour
 
     void Update()
     {
+    }
+
+    public void GetCard(Card card)
+    {
+        var randomJoke = GetRandomKeyValuePair();
+
+        card.InstantiateCard(randomJoke.Key, randomJoke.Value, GetRandomTags());
     }
 
     public void GetDadeJokesInEnglish()
@@ -98,5 +106,12 @@ public class CardGenerator : MonoBehaviour
     private bool HasDuplicates(List<Tag> tags)
     {
         return tags.GroupBy(x => x).Any(g => g.Count() > 1);
+    }
+
+    private KeyValuePair<string, string> GetRandomKeyValuePair()
+    {
+        int index = Random.Next(Jokes.Count);
+
+        return Jokes.ElementAt(index);
     }
 }
