@@ -1,3 +1,4 @@
+using Assembly_CSharp;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -8,6 +9,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject playerGameObject;
     [SerializeField] private GameObject botGameObject;
+    [SerializeField] private ShieldGenerator shieldGeneratorPlayer;
+    [SerializeField] private ShieldGenerator shieldGeneratorBot;
+
     private IPlayer player;
     private IPlayer bot;
 
@@ -37,11 +41,14 @@ public class GameManager : MonoBehaviour
         {
             bot.EnableTurn();
             isPlayerTurn = false;
+            shieldGeneratorBot.RotateShieldForGame();
         }
         else
         {
             player.EnableTurn();
             isPlayerTurn = true;
+            shieldGeneratorPlayer.RotateShieldForGame();
+            
         }
 
         Debug.Log(isPlayerTurn + " " + roundNumber);

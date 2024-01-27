@@ -310,9 +310,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2060866304}
-        m_TargetAssemblyTypeName: CardGenerator, Assembly-CSharp
-        m_MethodName: GetDadeJokesInEnglish
+      - m_Target: {fileID: 2060866305}
+        m_TargetAssemblyTypeName: Assets.AttackGenerator, Assembly-CSharp
+        m_MethodName: Test
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -825,9 +825,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2060866304}
-        m_TargetAssemblyTypeName: CardGenerator, Assembly-CSharp
-        m_MethodName: GetCard
+      - m_Target: {fileID: 2060866305}
+        m_TargetAssemblyTypeName: Assets.AttackGenerator, Assembly-CSharp
+        m_MethodName: ClaculateDamage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -904,6 +904,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff81202ed30fb5048a6442911ec4d45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pregab: {fileID: 0}
+  prego: {fileID: 0}
 --- !u!4 &1950803228
 Transform:
   m_ObjectHideFlags: 0
@@ -1064,6 +1066,7 @@ GameObject:
   - component: {fileID: 2060866303}
   - component: {fileID: 2060866302}
   - component: {fileID: 2060866304}
+  - component: {fileID: 2060866305}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1110,6 +1113,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 888312966d6c1ff4eb286000e61e94db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2060866305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060866301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a612cafc77fa5e4d952e962cf82aeb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807

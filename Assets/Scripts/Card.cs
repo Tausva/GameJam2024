@@ -1,3 +1,5 @@
+using Assets;
+using Assets.Scripts;
 using Assets.Scripts.Enums;
 using System.Collections.Generic;
 using TMPro;
@@ -15,6 +17,8 @@ public class Card : MonoBehaviour
     [SerializeField] private string jokeWindup;
     [SerializeField] private string jokePunchline;
     [SerializeField] private List<Tag> tags;
+    private AttackGenerator attackGenerator;
+    private HealthBar healthBar;
 
     [Space]
     //Lerping vars
@@ -38,6 +42,16 @@ public class Card : MonoBehaviour
         }
     }
 
+    public void AddAttackGenerator(AttackGenerator attackGenerator)
+    {
+        this.attackGenerator = attackGenerator;
+    }
+
+    public void CallAttackGenerator()
+    {
+        attackGenerator.ClaculateDamage(tags);
+    }
+
     public Card InstantiateCard(string windup, string punchline, List<Tag> tags)
     {
         jokePunchline = punchline;
@@ -49,9 +63,9 @@ public class Card : MonoBehaviour
         return this;
     }
 
-    public bool PenetratesShield(Tag tag)
+    public List<Tag> GetTagsUsedCard()
     {
-        return tags.Contains(tag);
+        return tags;
     }
 
     public void DisableBack()
