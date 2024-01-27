@@ -64,16 +64,16 @@ public class GameManager : MonoBehaviour
     private IEnumerator SpawnCards()
     {
         float waitFor = 0.3f;
-        Debug.Log("Draw 1");
+
         playerDeck.DrawCard();
         yield return new WaitForSeconds(waitFor);
-        Debug.Log("Draw 2");
+
         playerDeck.DrawCard();
         yield return new WaitForSeconds(waitFor);
-        Debug.Log("Draw 3");
+
         playerDeck.DrawCard();
         yield return new WaitForSeconds(waitFor);
-        Debug.Log("Draw 4");
+
         playerDeck.DrawCard();
         
     }

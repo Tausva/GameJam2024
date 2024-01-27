@@ -1534,7 +1534,7 @@ MonoBehaviour:
   botGameObject: {fileID: 660339808}
   shieldGeneratorPlayer: {fileID: 2060866305}
   shieldGeneratorBot: {fileID: 2060866305}
-  playerDeck: {fileID: 0}
+  playerDeck: {fileID: 542158051}
 --- !u!4 &2060866303
 Transform:
   m_ObjectHideFlags: 0
