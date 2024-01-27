@@ -1516,6 +1516,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 422021756227470524, guid: 58fea7bcd24bf0e4d8d9876f70f532b6, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1095142290133708685, guid: 58fea7bcd24bf0e4d8d9876f70f532b6, type: 3}
       propertyPath: m_Name
       value: AudioManager
