@@ -9,6 +9,10 @@ public class Player : MonoBehaviour, IPlayer
     private bool isMyTurn = false;
     private GameManager gameManager;
 
+    //Testing
+    public Transform pregab;
+    public Transform prego;
+
     public void EnableTurn()
     {
         isMyTurn = true;
@@ -43,7 +47,8 @@ public class Player : MonoBehaviour, IPlayer
 
     public void Test()
     {
-       var card = FindObjectOfType<Card>();
+        var cardTrans = Instantiate(pregab, prego);
+       var card = cardTrans.GetComponent<Card>();
         card.InstantiateCard("Bober kurwa", "jak perdole", new List<Tag> { Tag.Fire, Tag.Water, Tag.Dragon, Tag.Demon, Tag.Bug});
     }
 }
