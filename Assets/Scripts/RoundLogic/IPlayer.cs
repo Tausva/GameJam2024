@@ -5,4 +5,5 @@ using UnityEngine;
 public interface IPlayer
 {
     void EnableTurn();
+    void Instantiate(GameManager manager);
 }

@@ -6,8 +6,10 @@ public class GameManager : MonoBehaviour
     private bool isPlayerStartedFirst;
     private int roundNumber;
 
-    [SerializeField] private IPlayer player;
-    [SerializeField] private IPlayer bot;
+    [SerializeField] private GameObject playerGameObject;
+    [SerializeField] private GameObject botGameObject;
+    private IPlayer player;
+    private IPlayer bot;
 
     private void Start()
     {
@@ -15,8 +17,11 @@ public class GameManager : MonoBehaviour
         isPlayerStartedFirst = isPlayerTurn;
         roundNumber = 1;
 
+        player = playerGameObject.GetComponent<IPlayer>();
+        //bot = botGameObject.GetComponent<IPlayer>();
+
         player.Instantiate(this);
-        bot.Instantiate(this);
+        //bot.Instantiate(this);
 
         //Horrible hack
         isPlayerTurn = !isPlayerTurn;
@@ -30,7 +35,7 @@ public class GameManager : MonoBehaviour
 
         if (isPlayerTurn)
         {
-            bot.EnableTurn();
+            //bot.EnableTurn();
             isPlayerTurn = false;
         }
         else
@@ -38,6 +43,8 @@ public class GameManager : MonoBehaviour
             player.EnableTurn();
             isPlayerTurn = true;
         }
+
+        Debug.Log(isPlayerTurn + " " + roundNumber);
     }
 
     void Update()
