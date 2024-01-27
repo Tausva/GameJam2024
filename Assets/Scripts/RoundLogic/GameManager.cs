@@ -75,6 +75,5 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(waitFor);
 
         playerDeck.DrawCard();
-        
     }
 }
