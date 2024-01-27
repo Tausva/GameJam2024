@@ -94,6 +94,16 @@ public class Card : MonoBehaviour
         deck.ToggleHand(false);
     }
 
+    public void RemoveAllCards()
+    {
+        transform.parent.parent.GetComponent<Hand>().RemoveAllCards();
+    }
+
+    public void RemoveCard()
+    {
+        Destroy(gameObject);
+    }
+
     public void MoveToPosition(Vector2 position)
     {
         targetPosition = position;

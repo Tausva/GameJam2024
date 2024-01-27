@@ -45,17 +45,13 @@ public class Hand : MonoBehaviour
         }
     }
 
-    public void ManageSlots()
+    public void RemoveAllCards()
     {
-        for (int i = Slots.Count - 1; i > 0; i--)
+        foreach (var slot in Slots)
         {
-            if (Slots[i].childCount == 0)
+            if (slot.childCount > 0)
             {
-                for (int j = 0; j < i; j++)
-                {
-
-                    //Slots[j].transform.Add = Slots[j + 1].GetChild(0);
-                }
+                slot.GetChild(0).GetComponent<Animator>().SetBool("Remove", true);
             }
         }
     }
