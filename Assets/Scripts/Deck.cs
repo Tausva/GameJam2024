@@ -43,5 +43,6 @@ public class Deck : MonoBehaviour
         cardObj.GetComponent<Card>().AddAttackGenerator(attackGenerator);
         cardObj.GetComponent<Card>().AddDeck(this);
         hand.PlaceNewCard(cardObj.transform);
+
     }
 }
