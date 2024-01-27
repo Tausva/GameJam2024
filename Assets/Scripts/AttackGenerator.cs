@@ -28,7 +28,7 @@ namespace Assets
 
             if (isDamageShouldBeMade)
             {
-                healthBar.DamageHealthBar();
+                healthBar.DamageHealthBar(isPlayer);
 
                 if (isPlayer)
                 {
@@ -38,6 +38,8 @@ namespace Assets
                 {
                     AudioManager.PlaySound(5);
                 }
+
+                healthBar.CheckWhoWin();
             }
         }
     }
