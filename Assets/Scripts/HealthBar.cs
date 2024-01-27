@@ -40,6 +40,7 @@ namespace Assets.Scripts
                 text.enabled = true;
                 text.enableKerning = true;
                 text.SetText("You Loose");
+                AudioManager.StopPlaying();
                 AudioManager.PlaySound(2);
             }
 
@@ -50,6 +51,7 @@ namespace Assets.Scripts
                 text.enabled = true;
                 text.enableKerning = true;
                 text.SetText("You win");
+                AudioManager.StopPlaying();
                 AudioManager.PlaySound(1);
             }
         }
