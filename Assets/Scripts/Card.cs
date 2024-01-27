@@ -16,10 +16,26 @@ public class Card : MonoBehaviour
     [SerializeField] private string jokePunchline;
     [SerializeField] private List<Tag> tags;
 
+    [Space]
+    //Lerping vars
+    private Vector3 startPosition;
+    private Vector3 targetPosition;
+    private float timeElapsed;
+    [SerializeField] private float lerpDuration = 3;
+
     private void Awake()
     {
         jokeText = GetComponentInChildren<TMP_Text>();
         tagContainer = transform.GetChild(1).GetChild(1);
+    }
+
+    private void Update()
+    {
+        if (timeElapsed < lerpDuration)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, timeElapsed / lerpDuration);
+            timeElapsed += Time.deltaTime;
+        }
     }
 
     public Card InstantiateCard(string windup, string punchline, List<Tag> tags)
@@ -42,6 +58,13 @@ public class Card : MonoBehaviour
     {
         var back = transform.GetChild(0);
         back.gameObject.SetActive(false);
+    }
+
+    public void MoveToPosition(Vector2 position)
+    {
+        targetPosition = position;
+        startPosition = transform.position;
+        timeElapsed = 0;
     }
 
     //Right now only adds visuals, dont remove tags!

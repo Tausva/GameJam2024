@@ -16,6 +16,7 @@ public class CardGenerator : MonoBehaviour
 
     private void Awake()
     {
+        GetDadeJokesInLithuania();
     }
 
     void Start()

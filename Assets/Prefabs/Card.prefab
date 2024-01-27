@@ -209,6 +209,7 @@ MonoBehaviour:
   jokeWindup: 
   jokePunchline: 
   tags: 
+  lerpDuration: 0.7
 --- !u!95 &1381634179222477500
 Animator:
   serializedVersion: 5
