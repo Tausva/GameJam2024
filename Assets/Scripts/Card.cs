@@ -57,6 +57,15 @@ public class Card : MonoBehaviour
         attackGenerator.ClaculateDamage(tags);
     }
 
+    public Card InstantiateCardShell(string windup, string punchline, List<Tag> tags)
+    {
+        jokePunchline = punchline;
+        jokeWindup = windup;
+        this.tags = tags;
+
+        return this;
+    }
+
     public Card InstantiateCard(string windup, string punchline, List<Tag> tags)
     {
         jokePunchline = punchline;

@@ -6,7 +6,7 @@ public class Deck : MonoBehaviour
 {
     [SerializeField] private Hand hand;
     private CardGenerator generator;
-    [SerializeField] private AttackGenerator attackGenerator;
+    [SerializeField] protected AttackGenerator attackGenerator;
 
     [Space]
     [SerializeField] private GameObject cardPrefab;

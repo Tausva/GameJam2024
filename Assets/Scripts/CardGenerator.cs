@@ -3,6 +3,7 @@ using Assets.Scripts.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor.PackageManager.UI;
 using UnityEngine;
 
 public class CardGenerator : MonoBehaviour
@@ -40,6 +41,13 @@ public class CardGenerator : MonoBehaviour
         var randomJoke = GetRandomKeyValuePair();
 
         card.InstantiateCard(randomJoke.Key, randomJoke.Value, GetRandomTags());
+    }
+
+    public void GetCardShell(Card card)
+    {
+        var randomJoke = GetRandomKeyValuePair();
+
+        card.InstantiateCardShell(randomJoke.Key, randomJoke.Value, GetRandomTags());
     }
 
     private List<Tag> GetRandomTags()

@@ -9,19 +9,7 @@ namespace Assets
     public class AttackGenerator : MonoBehaviour
     {
         [SerializeField] ShieldGenerator shieldGenerator;
-        [SerializeField] HealthBar healthBarBot;
-
-        private void Awake()
-        {
-        }
-
-        void Start()
-        {
-        }
-
-        void Update()
-        {
-        }
+        [SerializeField] HealthBar healthBar;
 
         public void ClaculateDamage(List<Tag> cardTags)
         {
@@ -41,7 +29,7 @@ namespace Assets
 
             if (isDamageShouldBeMade)
             {
-                healthBarBot.DamageHealthBar();
+                healthBar.DamageHealthBar();
             }
         }
     }

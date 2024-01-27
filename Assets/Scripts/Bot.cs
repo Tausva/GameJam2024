@@ -2,20 +2,21 @@ using UnityEngine;
 
 public class Bot : Participant
 {
-    bool isTurnOver;
+    bool isMyTurn;
 
     private void Update()
     {
-        if (isTurnOver)
+        if (isMyTurn)
         {
+            ((BotDeck)myDeck).RandomAttack();
+
             PassMyTurn();
-            isTurnOver = false;
+            isMyTurn = false;
         }
     }
 
     protected override void TurnLogic()
     {
-        Debug.Log("Bot turn");
-        isTurnOver = true;
+        isMyTurn = true;
     }
 }
