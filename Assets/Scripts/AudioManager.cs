@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -5,6 +6,7 @@ public class AudioManager : MonoBehaviour
     private AudioSource audioSource;
 
     private static AudioManager Instance;
+    [SerializeField] private List<AudioClip> audioSources;
 
     private void Awake()
     {
@@ -19,9 +21,9 @@ public class AudioManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
     }
 
-    public static void PlaySound(AudioClip clip)
+    public static void PlaySound(int musicNumber)
     {
-        Instance.audioSource.PlayOneShot(clip);
+        Instance.audioSource.PlayOneShot(Instance.audioSources[musicNumber]);
     }
 
     public static void StopPlaying()

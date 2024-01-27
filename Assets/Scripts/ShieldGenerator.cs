@@ -93,7 +93,5 @@ namespace Assembly_CSharp
         {
             return tags.GroupBy(x => x).Any(g => g.Count() > 1);
         }
-
-
     }
 }

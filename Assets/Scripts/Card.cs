@@ -55,6 +55,7 @@ public class Card : MonoBehaviour
     public void CallAttackGenerator()
     {
         attackGenerator.ClaculateDamage(tags);
+        AudioManager.PlaySound(7);
     }
 
     public Card InstantiateCardShell(string windup, string punchline, List<Tag> tags)

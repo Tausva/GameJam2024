@@ -10,13 +10,12 @@ namespace Assets
     {
         [SerializeField] ShieldGenerator shieldGenerator;
         [SerializeField] HealthBar healthBar;
+        [SerializeField] bool isPlayer;
 
         public void ClaculateDamage(List<Tag> cardTags)
         {
             var isDamageShouldBeMade = false;
             var shieldTag = shieldGenerator.GetRoundDefenseShield();
-
-            Debug.Log(shieldTag.ToString());
 
             foreach (var tag in cardTags)
             {
@@ -30,6 +29,15 @@ namespace Assets
             if (isDamageShouldBeMade)
             {
                 healthBar.DamageHealthBar();
+
+                if (isPlayer)
+                {
+                    AudioManager.PlaySound(6);
+                }
+                else
+                {
+                    AudioManager.PlaySound(5);
+                }
             }
         }
     }
