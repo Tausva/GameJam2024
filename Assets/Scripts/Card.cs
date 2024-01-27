@@ -18,7 +18,7 @@ public class Card : MonoBehaviour
     [SerializeField] private string jokePunchline;
     [SerializeField] private List<Tag> tags;
     private AttackGenerator attackGenerator;
-    private HealthBar healthBar;
+    private Deck deck;
 
     [Space]
     //Lerping vars
@@ -47,6 +47,11 @@ public class Card : MonoBehaviour
         this.attackGenerator = attackGenerator;
     }
 
+    public void AddDeck(Deck deck)
+    {
+        this.deck = deck;
+    }
+
     public void CallAttackGenerator()
     {
         attackGenerator.ClaculateDamage(tags);
@@ -72,6 +77,11 @@ public class Card : MonoBehaviour
     {
         var back = transform.GetChild(0);
         back.gameObject.SetActive(false);
+    }
+
+    public void DisableCards()
+    {
+        deck.ToggleHand(false);
     }
 
     public void MoveToPosition(Vector2 position)

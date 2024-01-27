@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Hand : MonoBehaviour
 {
@@ -31,6 +32,17 @@ public class Hand : MonoBehaviour
         }
 
         return null;
+    }
+
+    public void ToggleCards(bool isEnabled)
+    {
+        foreach (var slot in Slots)
+        {
+            if (slot.childCount > 0)
+            {
+                slot.GetChild(0).GetComponent<Button>().interactable = isEnabled;
+            }
+        }
     }
 
     public void ManageSlots()
