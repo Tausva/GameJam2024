@@ -1,29 +1,10 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour, IPlayer
+public class Player : Participant
 {
-    private bool isMyTurn = false;
-    private GameManager gameManager;
-    [SerializeField] private Deck myDeck;
-
-    public void EnableTurn()
+    protected override void TurnLogic()
     {
-        isMyTurn = true;
         myDeck.ToggleHand(true);
-    }
-
-    public void Instantiate(GameManager manager)
-    {
-        gameManager = manager;
-    }
-
-    public void PassMyTurn()
-    {
-        if (isMyTurn)
-        {
-            isMyTurn = false;
-            gameManager.PassTurn();
-        }
-        
+        myDeck.SubscribeToActionCompleteEvent(PassMyTurn);
     }
 }

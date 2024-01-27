@@ -1,5 +1,6 @@
 using Assets;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Deck : MonoBehaviour
 {
@@ -10,14 +11,29 @@ public class Deck : MonoBehaviour
     [Space]
     [SerializeField] private GameObject cardPrefab;
 
+    private UnityEvent actionCompleteEvent;
+
     private void Awake()
     {
         generator = GetComponent<CardGenerator>();
     }
 
+    public void SubscribeToActionCompleteEvent(UnityAction listener)
+    {
+        if (actionCompleteEvent == null)
+            actionCompleteEvent = new UnityEvent();
+
+        actionCompleteEvent.AddListener(listener);
+    }
+
     public void ToggleHand(bool isEnabled)
     {
         hand.ToggleCards(isEnabled);
+
+        if (!isEnabled)
+        {
+            actionCompleteEvent.Invoke();
+        }
     }
 
     public void DrawCard()

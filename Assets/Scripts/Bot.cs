@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Bot : MonoBehaviour
+public class Bot : Participant
 {
-    // Start is called before the first frame update
-    void Start()
+    bool isTurnOver;
+
+    private void Update()
     {
-        
+        if (isTurnOver)
+        {
+            PassMyTurn();
+            isTurnOver = false;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void TurnLogic()
     {
-        
+        Debug.Log("Bot turn");
+        isTurnOver = true;
     }
 }

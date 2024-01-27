@@ -39,19 +39,16 @@ public class GameManager : MonoBehaviour
 
         if (isPlayerTurn)
         {
-            bot.EnableTurn();
             isPlayerTurn = false;
             shieldGeneratorBot.RotateShieldForGame();
+            bot.EnableTurn();
         }
         else
         {
-            player.EnableTurn();
             isPlayerTurn = true;
             shieldGeneratorPlayer.RotateShieldForGame();
-            
+            player.EnableTurn();
         }
-
-        Debug.Log(isPlayerTurn + " " + roundNumber);
     }
 
     void Update()
