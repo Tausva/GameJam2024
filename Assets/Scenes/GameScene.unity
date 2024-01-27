@@ -1036,6 +1036,7 @@ GameObject:
   m_Component:
   - component: {fileID: 660339810}
   - component: {fileID: 660339809}
+  - component: {fileID: 660339811}
   m_Layer: 0
   m_Name: BotTemp
   m_TagString: Untagged
@@ -1055,8 +1056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff81202ed30fb5048a6442911ec4d45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pregab: {fileID: 0}
-  prego: {fileID: 0}
+  myDeck: {fileID: 0}
 --- !u!4 &660339810
 Transform:
   m_ObjectHideFlags: 0
@@ -1072,6 +1072,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &660339811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660339808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2304a3c341d4bfe4ba9a6c4e43cda837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &699778094
 GameObject:
   m_ObjectHideFlags: 0
@@ -2086,8 +2098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff81202ed30fb5048a6442911ec4d45a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pregab: {fileID: 0}
-  prego: {fileID: 0}
+  myDeck: {fileID: 542158051}
 --- !u!4 &1950803228
 Transform:
   m_ObjectHideFlags: 0
@@ -2357,6 +2368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shieldGenerator: {fileID: 2060866305}
+  healthBarBot: {fileID: 0}
 --- !u!114 &2060866305
 MonoBehaviour:
   m_ObjectHideFlags: 0
