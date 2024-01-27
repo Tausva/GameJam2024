@@ -1,3 +1,4 @@
+using Assets.Scripts.Enums;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -13,9 +14,7 @@ public class Card : MonoBehaviour
     [Header("Debug")]
     [SerializeField] private string jokeWindup;
     [SerializeField] private string jokePunchline;
-    [SerializeField] private List<string> tags;
-
-
+    [SerializeField] private List<Tag> tags;
 
     private void Awake()
     {
@@ -23,7 +22,7 @@ public class Card : MonoBehaviour
         tagContainer = transform.GetChild(1);
     }
 
-    public Card InstantiateCard(string windup, string punchline, List<string> tags)
+    public Card InstantiateCard(string windup, string punchline, List<Tag> tags)
     {
         jokePunchline = punchline;
         jokeWindup = windup;
@@ -34,7 +33,7 @@ public class Card : MonoBehaviour
         return this;
     }
 
-    public bool PenetratesShield(string tag)
+    public bool PenetratesShield(Tag tag)
     {
         return tags.Contains(tag);
     }
@@ -49,7 +48,7 @@ public class Card : MonoBehaviour
 
     private void AddTags()
     {
-        foreach (string tag in tags)
+        foreach (var tag in tags)
         {
             var instantiatedTag = Instantiate(tagPrefab);
             //Do tag logic: instantiatedTag.GetComponent<>
