@@ -1,3 +1,4 @@
+using Assets;
 using Assets.Scripts.Enums;
 using System;
 using System.Collections.Generic;
@@ -6,27 +7,37 @@ using UnityEngine;
 
 public class CardGenerator : MonoBehaviour
 {
-    private readonly System.Random random = new System.Random();
+    private readonly System.Random Random = new System.Random();
+    private readonly Repository Repository = new Repository();
+
+    private Dictionary<string, string> Jokes = new Dictionary<string, string>();
+
 
     private void Awake()
     {
-
     }
 
     void Start()
     {
-        var getRandomTags = GetRandomTags();
-        AddImagesToCard(getRandomTags);
     }
 
     void Update()
     {
+    }
 
+    public void GetDadeJokesInEnglish()
+    {
+        Jokes = Repository.GetJokesByLanguage(LanguageJoke.English);
+    }
+
+    public void GetDadeJokesInLithuania()
+    {
+        Jokes = Repository.GetJokesByLanguage(LanguageJoke.Lithuania);
     }
 
     private List<Tag> GetRandomTags()
     {
-        var luckChance = random.Next(1, 10);
+        var luckChance = Random.Next(1, 10);
         var tags = new List<Tag>();
 
         int countOfTags;
@@ -43,7 +54,7 @@ public class CardGenerator : MonoBehaviour
         }
         else 
         {
-            countOfTags = random.Next(2, 3);
+            countOfTags = Random.Next(2, 3);
             tags = GetRandomTagsNumber(countOfTags);
         }
 
@@ -58,14 +69,12 @@ public class CardGenerator : MonoBehaviour
 
         for (int i = 0; i < countOfTags; i++)
         {
-            var randomCategory = (Tag)jokeCategories.GetValue(random.Next(jokeCategories.Length));
+            var randomCategory = (Tag)jokeCategories.GetValue(Random.Next(jokeCategories.Length));
             categories.Add(randomCategory);
         }
 
         return categories;
     }
-
-    
 
     private List<Tag> CheckAndReplace(List<Tag> tags)
     {
@@ -77,7 +86,7 @@ public class CardGenerator : MonoBehaviour
                 {
                     if (tags[i] == tags[j])
                     {
-                        tags[j] = (Tag)random.Next(0, 10);
+                        tags[j] = (Tag)Random.Next(0, 10);
                     }
                 }
             }
@@ -90,55 +99,4 @@ public class CardGenerator : MonoBehaviour
     {
         return tags.GroupBy(x => x).Any(g => g.Count() > 1);
     }
-
-
-    private void AddImagesToCard(List<Tag> tags)
-    {
-
-        foreach(Tag tag in tags)
-        {
-            switch (tag)
-            {
-                case Tag.Fire:
-                    Debug.Log("It is Fire");
-                    break;
-                case Tag.Water:
-                    Debug.Log("It's a water tag!");
-                    break;
-                case Tag.Air:
-                    Debug.Log("It's an air tag!");
-                    break;
-                case Tag.Forest:
-                    Debug.Log("It's a forest tag!");
-                    break;
-                case Tag.Bug:
-                    Debug.Log("It's a bug tag!");
-                    break;
-                case Tag.Fairy:
-                    Debug.Log("It's a fairy tag!");
-                    break;
-                case Tag.Dragon:
-                    Debug.Log("It's a dragon tag!");
-                    break;
-                case Tag.Wizard:
-                    Debug.Log("It's a wizard tag!");
-                    break;
-                case Tag.Witch:
-                    Debug.Log("It's a witch tag!");
-                    break;
-                case Tag.Demon:
-                    Debug.Log("It's a demon tag!");
-                    break;
-                case Tag.Angel:
-                    Debug.Log("It's an angel tag!");
-                    break;
-                default:
-                    Debug.Log("Unknown tag!");
-                    break;
-            }
-        }
-       
-    }
-  
-    
 }
