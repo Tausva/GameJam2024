@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,18 +9,6 @@ namespace Assets.Scripts
     {
         private bool IsPlayer;
         [SerializeField] GameObject winLoosePanel;
-
-        private void Awake()
-        {
-        }
-
-        void Start()
-        {
-        }
-
-        void Update()
-        {
-        }
 
         public void DamageHealthBar(bool isPlayer)
         {
@@ -35,25 +24,30 @@ namespace Assets.Scripts
 
             if (!IsPlayer && slider.value == 0)
             {
-                winLoosePanel.SetActive(true);
-                var text = winLoosePanel.transform.GetChild(0).GetComponent<TMP_Text>();
-                text.enabled = true;
-                text.enableKerning = true;
-                text.SetText("You Loose");
-                AudioManager.StopPlaying();
-                AudioManager.PlaySound(2);
+                ActivatePanel("You have lost!", 2);
             }
 
             if (IsPlayer && slider.value == 0)
             {
-                winLoosePanel.SetActive(true);
-                var text = winLoosePanel.transform.GetChild(0).GetComponent<TMP_Text>();
-                text.enabled = true;
-                text.enableKerning = true;
-                text.SetText("You win");
-                AudioManager.StopPlaying();
-                AudioManager.PlaySound(1);
+                StartCoroutine(DelayVictory());
             }
+        }
+
+        private IEnumerator DelayVictory()
+        {
+            float waitFor = 3f;
+            yield return new WaitForSeconds(waitFor);
+
+            ActivatePanel("Victory!", 1);
+        }
+
+        private void ActivatePanel(string text, int soundId)
+        {
+            winLoosePanel.SetActive(true);
+            var textField = winLoosePanel.transform.GetChild(0).GetComponent<TMP_Text>();
+            textField.SetText(text);
+            AudioManager.StopPlaying();
+            AudioManager.PlaySound(soundId);
         }
     }
 }

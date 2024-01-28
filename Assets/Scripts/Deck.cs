@@ -44,9 +44,9 @@ public class Deck : MonoBehaviour
         }
     }
 
-    public IEnumerator DelayTurn()
+    private IEnumerator DelayTurn()
     {
-        float waitFor = 3.2f;
+        float waitFor = 3f;
         yield return new WaitForSeconds(waitFor);
 
         actionCompleteEvent.Invoke();
