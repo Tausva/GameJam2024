@@ -4,18 +4,17 @@ using UnityEngine;
 public class PunchlineHandler : MonoBehaviour
 {
     private TMP_Text text;
-    private GameObject panel;
+    private Animator animator;
 
     void Awake()
     {
         text = GetComponentInChildren<TMP_Text>();
-        panel = transform.GetChild(0).gameObject;
-        panel.SetActive(false);
+        animator = GetComponent<Animator>();
     }
 
     public void ShowPunchline(string punchline)
     {
-        panel.SetActive(true);
+        animator.SetTrigger("Punch");
         text.text = punchline;
     }
 }
