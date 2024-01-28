@@ -14,10 +14,10 @@ namespace Assets
             switch (languageJoke)
             {
                 case LanguageJoke.English:
-                    jokes = GetDadJokesInEnglish();
+                    jokes = GetData("Data/EnglishDadJokes");
                     break;
                 case LanguageJoke.Lithuania:
-                    jokes = GetDadJokesInLithuania();
+                    jokes = GetData("Data/LithuaniaDadJokes");
                     break;
 
             }
@@ -25,42 +25,23 @@ namespace Assets
             return jokes;
         }
 
-        private Dictionary<string, string> GetDadJokesInEnglish()
-        {
-
-            var filePath = $"{Application.dataPath}/Data/EnglishDadJokes.csv";
-
-            var jokes = GetData(filePath);
-
-            return jokes;
-        }
-
-
-        private Dictionary<string, string> GetDadJokesInLithuania()
-        {
-            var filePath = $"{Application.dataPath}/Data/LithuaniaDadJokes.csv";
-
-            var jokes = GetData(filePath);
-
-            return jokes;
-        }
-
         private Dictionary<string, string> GetData(string filePath)
         {
+            var asset = Resources.Load(filePath) as TextAsset;
+
             var jokes = new Dictionary<string, string>();
 
-            using (StreamReader reader = new StreamReader(filePath))
+            StringReader reader = new StringReader(asset.text);
+            while (reader.Peek() != -1)
             {
-                string line;
-                while ((line = reader.ReadLine()) != null)
+                string line = reader.ReadLine();
+
+                string[] parts = line.Split(',');
+                if (parts.Length == 2)
                 {
-                    string[] parts = line.Split(',');
-                    if (parts.Length == 2)
-                    {
-                        string question = parts[0];
-                        string answer = parts[1];
-                        jokes.TryAdd(question, answer);
-                    }
+                    string question = parts[0];
+                    string answer = parts[1];
+                    jokes.TryAdd(question, answer);
                 }
             }
 
