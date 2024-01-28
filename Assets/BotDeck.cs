@@ -9,6 +9,6 @@ public class BotDeck : Deck
         var card = new Card();
         cardGenerator.GetCardShell(card);
 
-        attackGenerator.ClaculateDamage(card.GetTagsUsedCard());
+        attackGenerator.ClaculateDamage(card.GetTagsUsedCard(), "");
     }
 }

@@ -192,31 +192,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2006798021532223937}
-        m_TargetAssemblyTypeName: Card, Assembly-CSharp
-        m_MethodName: CallAttackGenerator
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2006798021532223937}
-        m_TargetAssemblyTypeName: Card, Assembly-CSharp
-        m_MethodName: DisableCards
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2006798021532223937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,9 +206,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagPrefab: {fileID: 2691860741295039277, guid: 5a58ff9983fa79645b846dbfd1ec7561, type: 3}
-  jokeWindup: 
-  jokePunchline: 
-  tags: 
   lerpDuration: 0.7
 --- !u!95 &1381634179222477500
 Animator:

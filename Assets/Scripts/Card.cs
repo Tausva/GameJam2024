@@ -51,7 +51,7 @@ public class Card : MonoBehaviour
 
     public void CallAttackGenerator()
     {
-        attackGenerator.ClaculateDamage(tags);
+        attackGenerator.ClaculateDamage(tags, jokePunchline);
         AudioManager.PlaySound(7);
     }
 

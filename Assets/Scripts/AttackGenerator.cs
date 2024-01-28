@@ -11,8 +11,9 @@ namespace Assets
         [SerializeField] ShieldGenerator shieldGenerator;
         [SerializeField] HealthBar healthBar;
         [SerializeField] bool isPlayer;
+        [SerializeField] private PunchlineHandler punchlineHandler;
 
-        public void ClaculateDamage(List<Tag> cardTags)
+        public void ClaculateDamage(List<Tag> cardTags, string punchline)
         {
             var isDamageShouldBeMade = false;
             var shieldTag = shieldGenerator.GetRoundDefenseShield();
@@ -29,9 +30,9 @@ namespace Assets
             if (isDamageShouldBeMade)
             {
                 healthBar.DamageHealthBar(isPlayer);
-
                 if (isPlayer)
                 {
+                    punchlineHandler?.ShowPunchline(punchline);
                     AudioManager.PlaySound(6);
                 }
                 else
