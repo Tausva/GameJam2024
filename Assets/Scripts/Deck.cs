@@ -1,4 +1,5 @@
 using Assets;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -29,11 +30,26 @@ public class Deck : MonoBehaviour
     public void ToggleHand(bool isEnabled)
     {
         hand.ToggleCards(isEnabled);
+    }
 
-        if (!isEnabled)
+    public void FinishMove(bool delay)
+    {
+        if (delay)
+        {
+            StartCoroutine(DelayTurn());
+        }
+        else
         {
             actionCompleteEvent.Invoke();
         }
+    }
+
+    public IEnumerator DelayTurn()
+    {
+        float waitFor = 3.2f;
+        yield return new WaitForSeconds(waitFor);
+
+        actionCompleteEvent.Invoke();
     }
 
     public void DrawCard()
@@ -44,6 +60,5 @@ public class Deck : MonoBehaviour
         cardObj.GetComponent<Card>().AddDeck(this);
         hand.PlaceNewCard(cardObj.transform);
         AudioManager.PlaySound(4);
-
     }
 }

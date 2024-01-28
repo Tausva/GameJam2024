@@ -24,6 +24,10 @@ public class Card : MonoBehaviour
     [Space]
     [SerializeField] private float lerpDuration = 3;
 
+    private bool attackInProgress = false;
+    private bool disableInitiated = false;
+    private bool actionTaken = false;
+
     private void Awake()
     {
         jokeText = GetComponentInChildren<TMP_Text>();
@@ -36,6 +40,12 @@ public class Card : MonoBehaviour
         {
             transform.position = Vector3.Lerp(startPosition, targetPosition, timeElapsed / lerpDuration);
             timeElapsed += Time.deltaTime;
+        }
+
+        if (disableInitiated && !actionTaken)
+        {
+            actionTaken = true;
+            deck.FinishMove(attackInProgress);
         }
     }
 
@@ -51,7 +61,7 @@ public class Card : MonoBehaviour
 
     public void CallAttackGenerator()
     {
-        attackGenerator.ClaculateDamage(tags, jokePunchline);
+        attackInProgress = attackGenerator.ClaculateDamage(tags, jokePunchline);
         AudioManager.PlaySound(7);
     }
 
@@ -93,6 +103,8 @@ public class Card : MonoBehaviour
 
     public void RemoveAllCards()
     {
+        disableInitiated = true;
+
         DisableCards();
         transform.parent.parent.GetComponent<Hand>().RemoveAllCards();
     }

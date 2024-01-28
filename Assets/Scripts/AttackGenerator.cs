@@ -13,8 +13,10 @@ namespace Assets
         [SerializeField] bool isPlayer;
         [SerializeField] private PunchlineHandler punchlineHandler;
 
-        public void ClaculateDamage(List<Tag> cardTags, string punchline)
+        public bool ClaculateDamage(List<Tag> cardTags, string punchline)
         {
+            var shouldPause = false;
+
             var isDamageShouldBeMade = false;
             var shieldTag = shieldGenerator.GetRoundDefenseShield();
 
@@ -33,6 +35,7 @@ namespace Assets
                 if (isPlayer)
                 {
                     punchlineHandler?.ShowPunchline(punchline);
+                    shouldPause = true;
                     AudioManager.PlaySound(6);
                 }
                 else
@@ -42,6 +45,8 @@ namespace Assets
 
                 healthBar.CheckWhoWin();
             }
+
+            return shouldPause;
         }
     }
 }
